@@ -6,12 +6,22 @@ import "./index.css"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Root from "./routes/root"
 import Index from "./routes"
+import Books from "./routes/books"
+import Book from "./routes/book"
+import Cart from "./routes/cart"
+import Author from "./routes/author"
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    children: [{ index: true, element: <Index /> }],
+    children: [
+      { index: true, element: <Index /> },
+      { path: "/books", element: <Books /> },
+      { path: "/book/:slugAndId", element: <Book /> },
+      { path: "/author/:slugAndId", element: <Author /> },
+      { path: "/cart", element: <Cart /> },
+    ],
   },
 ])
 
