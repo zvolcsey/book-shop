@@ -3,6 +3,7 @@
 ## Overview
 
 > ### My TypeScript + React + Express + Redux Toolkit + PostgreSQL book shop portfolio project
+> I used official Redux template for Vite. [This available here](https://github.com/reduxjs/redux-templates)
 
 ## Content
 
@@ -14,6 +15,10 @@
 ## Routing
 
 - Home page (URL: /)
+- Books list page (URL: /books)
+- Detailed book page (URL: /book-name-slug + book-unique-id)
+- Author page (URL: /author-name-slug + author-unique-id)
+- Cart page (URL: /cart)
 
 ## Run locally
 
