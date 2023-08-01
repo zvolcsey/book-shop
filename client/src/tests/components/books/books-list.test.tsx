@@ -1,8 +1,8 @@
 import { cleanup, screen } from "@testing-library/react"
 import { describe } from "vitest"
-import { renderWithRouter } from "../utils/testHelpers"
-import BooksList from "../../components/books/books-list"
-import { testBookList } from "../utils/testData"
+import { renderWithRouter } from "../../utils/testHelpers"
+import BooksList from "../../../components/books/books-list"
+import { testBookList } from "../../utils/testData"
 
 describe("BooksList", () => {
   afterEach(() => {

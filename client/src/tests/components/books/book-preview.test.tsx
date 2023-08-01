@@ -1,9 +1,9 @@
 import { describe, expect } from "vitest"
 import { cleanup, screen } from "@testing-library/react"
-import BookPreview from "../../components/books/book-preview"
-import type { IAuthor } from "../../app/types/books.types"
-import { renderWithRouter } from "../utils/testHelpers"
-import { testAuthor, testBookWithoutCover } from "../utils/testData"
+import BookPreview from "../../../components/books/book-preview"
+import type { IAuthor } from "../../../app/types/books.types"
+import { renderWithRouter } from "../../utils/testHelpers"
+import { testAuthor, testBookWithoutCover } from "../../utils/testData"
 
 describe("BookPreview", () => {
   afterEach(() => {
