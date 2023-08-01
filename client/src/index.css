@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #0066ff;
+  --action-color: #dd6b20;
+  --primary-bg: #3d3d3d;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,15 +18,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #3d3d3d;
+  display: grid;
+  grid-template-rows: 7.5rem auto;
+  height: 100vh;
 }
 
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-a:visited {
-  color: #fff;
+a.active {
+  color: var(--action-color);
 }
 
 code {

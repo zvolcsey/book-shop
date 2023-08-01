@@ -10,6 +10,8 @@ import Books from "./routes/books"
 import Book from "./routes/book"
 import Cart from "./routes/cart"
 import Author from "./routes/author"
+import { ChakraProvider } from "@chakra-ui/react"
+import SignIn from "./routes/sign-in"
 
 const router = createBrowserRouter([
   {
@@ -21,14 +23,17 @@ const router = createBrowserRouter([
       { path: "/book/:slugAndId", element: <Book /> },
       { path: "/author/:slugAndId", element: <Author /> },
       { path: "/cart", element: <Cart /> },
+      { path: "/sign-in", element: <SignIn /> },
     ],
   },
 ])
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
+    <ChakraProvider>
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
+    </ChakraProvider>
   </React.StrictMode>,
 )

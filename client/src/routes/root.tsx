@@ -1,17 +1,10 @@
 import { Outlet } from "react-router-dom"
+import Header from "../components/layout/header"
 
 export default function Root() {
   return (
     <>
-      {/* Header */}
-      <ul>
-        <li>
-          <a href="/">Index</a>
-        </li>
-        <li>
-          <a href="/books">Books</a>
-        </li>
-      </ul>
+      <Header />
       <main>
         <Outlet />
       </main>

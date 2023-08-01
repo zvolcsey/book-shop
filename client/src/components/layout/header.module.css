@@ -1,0 +1,129 @@
+.container {
+  height: 100%;
+}
+
+.upper-container {
+  height: 50%;
+  position: relative;
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-container {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 0.1rem solid #000;
+  background: var(--primary-bg);
+}
+
+.bottom-container li {
+  list-style: none;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.bottom-container a:hover {
+  color: var(--action-color);
+}
+
+.bottom-container a:focus-visible {
+  outline: 0.1rem solid var(--action-color);
+}
+
+.right-side {
+  position: absolute;
+  right: 2rem;
+}
+
+.right-side div {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.search-btn {
+  cursor: pointer;
+}
+
+.search-btn svg {
+  color: #fff;
+}
+
+.search-btn:hover svg {
+  color: var(--action-color);
+}
+
+.sign-in-btn {
+  display: none;
+}
+
+.sign-in-btn a:focus-visible {
+  outline: none;
+}
+
+.cart-btn svg {
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.cart-btn:hover svg,
+.cart-btn:active svg {
+  color: var(--action-color);
+}
+
+.cart-btn span {
+  position: relative;
+  background: var(--action-color);
+  padding: 0.3rem;
+  margin-left: 0.8rem;
+  border: 0.1rem solid var(--action-color);
+  border-radius: 0.2rem;
+  color: #fff;
+}
+
+.cart-btn span::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -0.5rem;
+  top: 50%;
+  translate: 0 -50%;
+  border-top: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid transparent;
+  border-right: 0.5rem solid var(--action-color);
+}
+
+@media (min-width: 48rem) {
+  .upper-container {
+    justify-content: space-around;
+  }
+
+  .right-side {
+    position: static;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .right-side div {
+    display: flex;
+  }
+
+  .sign-in-btn {
+    font-weight: 700;
+  }
+
+  .cart-btn {
+    position: static;
+    right: 0;
+  }
+}
