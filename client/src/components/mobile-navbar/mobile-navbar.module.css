@@ -1,0 +1,58 @@
+.container {
+  position: fixed;
+  background-color: var(--primary-color);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sign-in-btn {
+  position: absolute;
+  top: -2rem;
+}
+
+.sign-in-btn::after,
+.avatar:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 0.4rem solid var(--primary-bg);
+  z-index: 0;
+}
+
+.avatar::after {
+  border-radius: 50%;
+}
+
+.avatar {
+  position: absolute;
+  top: -2rem;
+}
+
+.search-btn svg,
+.menu-btn svg {
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.search-btn:hover svg,
+.search-btn:active svg,
+.menu-btn:hover svg,
+.menu-btn:active svg {
+  color: var(--action-color);
+}
+
+@media (min-width: 48rem) {
+  .container {
+    display: none;
+  }
+}
