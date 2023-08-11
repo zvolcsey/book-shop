@@ -1,0 +1,27 @@
+.footer {
+  background: var(--primary-color);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer a {
+  text-decoration: underline;
+}
+
+.footer a:hover {
+  color: var(--action-color);
+}
+
+.footer a:focus-visible {
+  outline: 0.1rem solid var(--action-color);
+}
+
+@media (min-width: 48rem) {
+  .footer {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}

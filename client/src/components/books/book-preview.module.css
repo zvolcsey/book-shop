@@ -2,31 +2,64 @@
   border: 0.1rem solid #2b2b2b;
   border-radius: 0.6rem;
   background: #2b2b2b;
-  margin: 0;
-  padding: 1rem;
-  width: 18rem;
+  width: 100%;
+  height: 100%;
   color: #fff;
   box-shadow: 1px 1px 10px #2b2b2b;
+  display: flex;
 }
 
 .image-container {
-  width: 70%;
-  height: 10rem;
-  margin: 0 auto;
+  width: 10rem;
+  height: 100%;
   background: #525252;
   display: flex;
   align-items: center;
-  justify-content: center;
   cursor: pointer;
+  text-align: center;
+  border-top-left-radius: 0.6rem;
+  border-bottom-left-radius: 0.6rem;
+}
+
+.meta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0.5rem;
+}
+
+.meta-details {
+  flex: 2;
+  align-self: start;
+  width: 100%;
+}
+
+.actions-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50% 0;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
 }
 
 .no-image {
   color: #fff;
 }
 
+.heading {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
 .title {
-  margin-top: 1rem;
-  text-align: center;
+  display: inline;
   font-size: 1.2rem;
   cursor: pointer;
 }
@@ -37,9 +70,8 @@
 }
 
 .author {
-  margin-top: 0.2rem;
-  font-size: 1rem;
-  text-align: center;
+  display: inline;
+  font-size: 0.8rem;
   font-weight: 400;
   font-style: italic;
 }
@@ -48,22 +80,19 @@
   text-decoration: underline;
 }
 
+.meta-details > p {
+  margin-top: 1rem;
+  line-height: 1.6;
+  display: none;
+}
+
 .price-container {
-  margin: 1rem 0;
+  width: 100%;
 }
 
-.online-price {
-  font-size: 1rem;
+.price {
+  font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.online-price span {
-  color: #ce6000;
-}
-
-.original-price {
-  font-size: 0.8rem;
 }
 
 .btn {
@@ -73,11 +102,23 @@
   padding: 0.6rem 1.2rem;
   color: #fff;
   cursor: pointer;
-  width: 100%;
+  width: fit-content;
   font-weight: 700;
 }
 
 .btn:hover,
 .btn:active {
   background: #e96d00;
+}
+
+@media (min-width: 48rem) {
+  .meta-details > p {
+    display: block;
+  }
+
+  .actions-container {
+    flex-direction: row;
+    justify-content: end;
+    gap: 1rem;
+  }
 }

@@ -1,14 +1,16 @@
 .cards-list {
   width: 90%;
-  max-width: 80rem;
   margin: 3rem auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 18rem);
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
 }
 
 .cards-list li {
+  width: 100%;
+  max-width: 55rem;
+  height: 12rem;
   list-style: none;
 }

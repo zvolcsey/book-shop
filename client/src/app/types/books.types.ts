@@ -9,9 +9,9 @@ export interface IBook {
   slug: string
   cover: string
   title: string
+  description: string
   author: IAuthor
-  onlinePrice: number
-  originalPrice: number
+  price: number
 }
 
 export interface IBookListProps {

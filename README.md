@@ -5,12 +5,13 @@
 > ### My TypeScript + React + Express + Redux Toolkit + PostgreSQL book shop portfolio project
 > I used official Redux template for Vite. [This available here](https://github.com/reduxjs/redux-templates)
 
-## Content
+## Table of Contents
 
 1. [Routing](#routing)
 2. [Run locally](#run-locally)
-3. [Port](#port)
-4. [License](#license)
+3. [Client README](/client/README.md)
+4. [Port](#port)
+5. [License](#license)
 
 ## Routing
 

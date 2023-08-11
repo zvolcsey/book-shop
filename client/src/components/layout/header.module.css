@@ -1,14 +1,18 @@
 .container {
   height: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 .upper-container {
   height: 50%;
   position: relative;
   background: var(--primary-color);
+  padding-left: 1rem;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .bottom-container {
@@ -16,14 +20,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 0.1rem solid #000;
-  background: var(--primary-bg);
+  background: rgb(61, 61, 61, 0.75);
 }
 
 .bottom-container li {
   list-style: none;
   color: #fff;
   text-decoration: underline;
+  font-weight: 700;
 }
 
 .bottom-container a:hover {
@@ -36,7 +40,7 @@
 
 .right-side {
   position: absolute;
-  right: 2rem;
+  right: 1rem;
 }
 
 .right-side div {

@@ -14,12 +14,11 @@ export default function MobileNavbar() {
         <FontAwesomeIcon icon={faMagnifyingGlass} />
       </Button>
       {user ? (
-        <Avatar name="John Doe" src="" size="lg" className={styles.avatar} />
+        <Avatar name="John Doe" src="" size="md" className={styles.avatar} />
       ) : (
         <Button
           colorScheme="orange"
-          size="lg"
-          borderRadius="0"
+          size="md"
           as={Link}
           to="/sign-in"
           className={styles["sign-in-btn"]}

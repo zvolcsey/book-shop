@@ -8,26 +8,27 @@ const books: IBook[] = [
     slug: "tools-of-titans",
     cover: "",
     title: "Tools of Titans",
+    description: `It is a long example the description. What is the book about? The user can read about the book.
+      It is a long example the description. What is the book about? The user can read about the book.`,
     author: {
       id: "author-1",
       slug: "tim-ferris",
       name: "Tim Ferris",
     },
-    onlinePrice: 16.89,
-    originalPrice: 19.89,
+    price: 16.89,
   },
   {
     id: "book-2",
     slug: "ego-is-the-enemy",
     cover: "",
     title: "Ego is the Enemy",
+    description: "It is the description.",
     author: {
       id: "author-2",
       slug: "ryan-holiday",
       name: "Ryan Holiday",
     },
-    onlinePrice: 15.39,
-    originalPrice: 18.39,
+    price: 15.39,
   },
 ]
 

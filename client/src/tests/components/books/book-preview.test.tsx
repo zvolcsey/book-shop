@@ -27,20 +27,20 @@ describe("BookPreview", () => {
 
     // Act
     const onlinePriceText = screen.getByText(
-      `${testBookWithoutCover.onlinePrice.toString()} USD`,
+      `${testBookWithoutCover.price.toString()} USD`,
     )
     const originalPriceText = screen.getByText(
-      `${testBookWithoutCover.originalPrice.toString()} USD`,
+      `${testBookWithoutCover.price.toString()} USD`,
     )
 
     // Assert
     expect(screen.getByText(testBookWithoutCover.title)).toBeInTheDocument()
     expect(screen.getByText(testAuthor.name)).toBeInTheDocument()
     expect(parseFloat(onlinePriceText.textContent!)).toEqual(
-      testBookWithoutCover.onlinePrice,
+      testBookWithoutCover.price,
     )
     expect(parseFloat(originalPriceText.textContent!)).toEqual(
-      testBookWithoutCover.originalPrice,
+      testBookWithoutCover.price,
     )
   })
 

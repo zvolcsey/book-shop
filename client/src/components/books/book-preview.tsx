@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom"
 import type { IBookPreviewProps } from "../../app/types/books.types"
 import styles from "./book-preview.module.css"
+import { Button } from "@chakra-ui/react"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export default function BookPreview({ book }: IBookPreviewProps) {
-  const { id, slug, cover, title, author, onlinePrice, originalPrice } = book
+  const { id, slug, cover, title, description, author, price } = book
   const handleAddToCart = () => {
     // TODO
     return null
@@ -23,27 +26,39 @@ export default function BookPreview({ book }: IBookPreviewProps) {
           </figure>
         )}
       </Link>
-      <Link to={`/book/${slug}-${id}`} className={styles["title-url"]}>
-        <h2 className={styles.title}>{`${title.substring(0, 25)}${
-          title.length > 25 ? "..." : ""
-        }`}</h2>
-      </Link>
-      <Link to={`/author/${author.slug}-${author.id}`}>
-        <h3 className={styles.author}>{`${author.name.substring(0, 25)}${
-          author.name.length > 25 ? "..." : ""
-        }`}</h3>
-      </Link>
-      <div className={styles["price-container"]}>
-        <p className={`${styles.price} ${styles["online-price"]}`}>
-          Online Price: <span>{onlinePrice} USD</span>
-        </p>
-        <p className={`${styles.price} ${styles["original-price"]}`}>
-          Original Price: <span>{originalPrice} USD</span>
-        </p>
+      <div className={styles.meta}>
+        <div className={styles["meta-details"]}>
+          <div className={styles.heading}>
+            <Link to={`/book/${slug}-${id}`} className={styles["title-url"]}>
+              <h2 className={styles.title}>{`${title.substring(0, 25)}${
+                title.length > 25 ? "..." : ""
+              }`}</h2>
+            </Link>
+            <Link to={`/author/${author.slug}-${author.id}`}>
+              <h3 className={styles.author}>{`${author.name.substring(0, 25)}${
+                author.name.length > 25 ? "..." : ""
+              }`}</h3>
+            </Link>
+          </div>
+          <p>{`${description.substring(0, 150)}${
+            description.length > 80 ? "..." : ""
+          }`}</p>
+        </div>
+        <div className={styles["actions-container"]}>
+          <p className={styles.price}>{price} USD</p>
+          <Button
+            rightIcon={<FontAwesomeIcon icon={faArrowRight} />}
+            className={styles.btn}
+            onClick={handleAddToCart}
+            colorScheme="orange"
+            variant="outline"
+            border="none"
+            size="md"
+          >
+            Add to Cart
+          </Button>
+        </div>
       </div>
-      <button className={styles.btn} onClick={handleAddToCart}>
-        Add to Cart
-      </button>
     </article>
   )
 }

@@ -4,8 +4,11 @@
   color: #fff;
 }
 
-.link:hover,
-.link:active {
+.link:visited {
+  color: #fff;
+}
+
+.link:hover {
   color: var(--action-color);
 }
 
