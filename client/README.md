@@ -2,7 +2,8 @@
 
 ## Overview
 
-> ### My TypeScript + React + Redux Toolkit book shop portfolio project - client side
+> ### My TypeScript + React + Redux Toolkit + Node + Express + Prisma + PostgreSQL book shop portfolio project
+> ### Client side
 
 ## Table of Contents
 
