@@ -4,7 +4,7 @@ import {
   ryanHolidayData, 
   timFerrisData, 
   toolsOfTitansData,
-} from './data'
+} from './seed-data'
 
 const prisma = new PrismaClient()
 

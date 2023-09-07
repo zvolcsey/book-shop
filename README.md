@@ -8,6 +8,7 @@
 ## Table of Contents
 
 1. [Routing](#routing)
+2. [Shared Types](#shared-types)
 2. [Run locally](#run-locally)
 3. [Client README](/client/README.md)
 4. [Server README](/server/README.md)
@@ -21,6 +22,11 @@
 - Detailed book page (URL: /book-name-slug + book-unique-id)
 - Author page (URL: /author-name-slug + author-unique-id)
 - Cart page (URL: /cart)
+
+## Shared Types
+
+- The types that are used by both sides are in the `shared` folder on the server side.
+- These types are available on both sides with the `@shared` path.
 
 ## Run locally
 

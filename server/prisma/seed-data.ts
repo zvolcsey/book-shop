@@ -1,9 +1,11 @@
 export const ryanHolidayData = {
+  slug: "ryan-holiday",
   firstName: 'Ryan',
   lastName: 'Holiday',
 }
 
 export const timFerrisData = {
+  slug: 'timothy-ferris',
   firstName: 'Timothy',
   lastName: 'Ferris',
 }

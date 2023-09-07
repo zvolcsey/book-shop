@@ -69,14 +69,18 @@
   color: #ce6000;
 }
 
-.author {
-  display: inline;
+.author-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 0.2rem;
   font-size: 0.8rem;
   font-weight: 400;
   font-style: italic;
 }
 
-.author:hover {
+.author-group h3:hover {
   text-decoration: underline;
 }
 
@@ -114,6 +118,13 @@
 @media (min-width: 48rem) {
   .meta-details > p {
     display: block;
+  }
+
+  .author-group {
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 0.8rem;
   }
 
   .actions-container {

@@ -1,46 +1,52 @@
-import type { IAuthor, IBook } from "../../app/types/books.types"
+import type {
+  IAuthorName,
+  IBooksList,
+  TBookWithAuthors,
+} from "@shared/books.types"
 
-export const testAuthor: IAuthor = {
+export const john: IAuthorName = {
   id: "test-author-1",
   slug: "john-doe",
-  name: "John Doe",
+  firstName: "John",
+  lastName: "Doe",
 }
 
-export const testBookWithoutCover: IBook = {
+export const jane: IAuthorName = {
+  id: "test-author-2",
+  slug: "jane-doe",
+  firstName: "Jane",
+  lastName: "Doe",
+}
+
+export const testBook1: TBookWithAuthors = {
   id: "test-book-1",
   slug: "test-book-title",
-  cover: "",
-  title: "Test Book Title",
-  description: "It is the description.",
-  author: testAuthor,
+  createdAt: new Date("2023-07-08"),
+  updateAt: new Date("2023-08-23"),
+  coverImg: "",
+  title: "Test Book 1",
+  description: "It is the description of the test book 1.",
+  authors: [{ author: john }, { author: jane }],
   price: 16.39,
+  publishedYear: 2016,
 }
 
-export const testBookList: IBook[] = [
-  {
-    id: "book-1",
-    slug: "tools-of-titans",
-    cover: "",
-    title: "Tools of Titans",
-    description: "It is the description.",
-    author: {
-      id: "author-1",
-      slug: "tim-ferris",
-      name: "Tim Ferris",
-    },
-    price: 16.89,
-  },
-  {
-    id: "book-2",
-    slug: "ego-is-the-enemy",
-    cover: "",
-    title: "Ego is the Enemy",
-    description: "It is the description.",
-    author: {
-      id: "author-2",
-      slug: "ryan-holiday",
-      name: "Ryan Holiday",
-    },
-    price: 15.39,
-  },
-]
+export const testBook2: TBookWithAuthors = {
+  id: "test-book-2",
+  slug: "test-book-title",
+  createdAt: new Date("2023-06-28"),
+  updateAt: new Date("2023-07-24"),
+  coverImg: "",
+  title: "Test Book Title",
+  description: "It is the description of the test book 2.",
+  authors: [{ author: jane }],
+  price: 15.39,
+  publishedYear: 2018,
+}
+
+export const testBookList: TBookWithAuthors[] = [testBook1, testBook2]
+
+export const testBookListfromDB: IBooksList = {
+  books: testBookList,
+  booksCount: testBookList.length,
+}

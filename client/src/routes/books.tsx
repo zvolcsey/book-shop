@@ -1,44 +1,38 @@
-import type { IBook } from "../app/types/books.types"
+import { useEffect } from "react"
+import styles from "./books.module.css"
 import BooksList from "../components/books/books-list"
-
-// Examples books
-const books: IBook[] = [
-  {
-    id: "book-1",
-    slug: "tools-of-titans",
-    cover: "",
-    title: "Tools of Titans",
-    description: `It is a long example the description. What is the book about? The user can read about the book.
-      It is a long example the description. What is the book about? The user can read about the book.`,
-    author: {
-      id: "author-1",
-      slug: "tim-ferris",
-      name: "Tim Ferris",
-    },
-    price: 16.89,
-  },
-  {
-    id: "book-2",
-    slug: "ego-is-the-enemy",
-    cover: "",
-    title: "Ego is the Enemy",
-    description: "It is the description.",
-    author: {
-      id: "author-2",
-      slug: "ryan-holiday",
-      name: "Ryan Holiday",
-    },
-    price: 15.39,
-  },
-]
+import {
+  initBooksAsync,
+  selectBooks,
+  selectBooksStatus,
+} from "../features/books/booksSlice"
+import { useAppDispatch, useAppSelector } from "../app/hooks"
 
 export default function Books() {
+  const dispatch = useAppDispatch()
+
+  const books = useAppSelector(selectBooks)
+  const booksFetchStatus = useAppSelector(selectBooksStatus)
+
+  useEffect(() => {
+    dispatch(initBooksAsync())
+  }, [dispatch])
+
   return (
     <>
-      {books.length > 0 ? (
+      {booksFetchStatus === "loading" && (
+        <p className={styles.message}>Loading...</p>
+      )}
+      {booksFetchStatus === "success" && books.length > 0 && (
         <BooksList books={books} />
-      ) : (
-        "There are no available books"
+      )}
+      {booksFetchStatus === "success" && books.length === 0 && (
+        <p className={styles.message}>There are no available books</p>
+      )}
+      {booksFetchStatus === "failed" && (
+        <p className={`${styles.message} ${styles.error}`}>
+          Failed to load the books from the database!
+        </p>
       )}
     </>
   )

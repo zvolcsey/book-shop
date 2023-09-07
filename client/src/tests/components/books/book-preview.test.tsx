@@ -1,80 +1,43 @@
 import { describe, expect } from "vitest"
 import { cleanup, screen } from "@testing-library/react"
 import BookPreview from "../../../components/books/book-preview"
-import type { IAuthor } from "../../../app/types/books.types"
 import { renderWithRouter } from "../../utils/testHelpers"
-import { testAuthor, testBookWithoutCover } from "../../utils/testData"
+import { john, testBook1 } from "../../utils/testData"
 
 describe("BookPreview", () => {
   afterEach(() => {
     cleanup()
   })
 
-  it("should render the book preview card correctly", async () => {
+  it("should render the book preview card without cover image correctly", async () => {
     // Arrange
-    renderWithRouter(<BookPreview book={testBookWithoutCover} />)
+    renderWithRouter(<BookPreview book={testBook1} />)
 
     // Act
     await screen.findByRole("article")
 
     // Assert
-    expect(screen.getByRole("article")).toBeInTheDocument()
+    expect(screen.getByRole("article")).toMatchSnapshot()
   })
 
   it("should display the book's title, author, prices correctly", () => {
     // Arrange
-    renderWithRouter(<BookPreview book={testBookWithoutCover} />)
+    renderWithRouter(<BookPreview book={testBook1} />)
 
     // Act
-    const onlinePriceText = screen.getByText(
-      `${testBookWithoutCover.price.toString()} USD`,
-    )
-    const originalPriceText = screen.getByText(
-      `${testBookWithoutCover.price.toString()} USD`,
-    )
+    const fullName = `${john.firstName} ${john.lastName}`
+    const priceText = screen.getByText(`${testBook1.price.toString()} USD`)
 
     // Assert
-    expect(screen.getByText(testBookWithoutCover.title)).toBeInTheDocument()
-    expect(screen.getByText(testAuthor.name)).toBeInTheDocument()
-    expect(parseFloat(onlinePriceText.textContent!)).toEqual(
-      testBookWithoutCover.price,
-    )
-    expect(parseFloat(originalPriceText.textContent!)).toEqual(
-      testBookWithoutCover.price,
-    )
-  })
-
-  it("should display the longest book's title and author correctly", () => {
-    // Arrange
-    const testAuthorWithLongName: IAuthor = {
-      ...testAuthor,
-      slug: "verylongfirstname-verylonglastname",
-      name: "Verylongfirstname VeryLongLastname",
-    }
-    const testBookWithLongStrings = {
-      ...testBookWithoutCover,
-      title: "It is a very long title. It is a very long title",
-      author: testAuthorWithLongName,
-    }
-    renderWithRouter(<BookPreview book={testBookWithLongStrings} />)
-
-    // Assert
-    expect(
-      screen.getByText(
-        `${testBookWithLongStrings.title.substring(0, 25)}${"..."}`,
-      ),
-    ).toBeInTheDocument()
-    expect(
-      screen.getByText(
-        `${testAuthorWithLongName.name.substring(0, 25)}${"..."}`,
-      ),
-    ).toBeInTheDocument()
+    expect(screen.getByText(testBook1.title)).toBeInTheDocument()
+    expect(screen.getByText(fullName)).toBeInTheDocument()
+    expect(parseFloat(priceText.textContent!)).toEqual(testBook1.price)
   })
 
   it("should display 'No image available' messsage, if there is NO cover", async () => {
     // Arrange
     const noCoverText = "No image available"
-    renderWithRouter(<BookPreview book={testBookWithoutCover} />)
+    renderWithRouter(<BookPreview book={testBook1} />)
 
     // Act
     await screen.findByRole("figure")

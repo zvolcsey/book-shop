@@ -1,0 +1,97 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BookPreview > should render the book preview card without cover image correctly 1`] = `
+<article
+  class="_card_9c9fee"
+>
+  <a
+    class="_image-container_9c9fee"
+    href="/book/test-book-title-test-book-1"
+  >
+    <figure
+      aria-label="No image available"
+      class="_no-image_9c9fee"
+    >
+      No image available
+    </figure>
+  </a>
+  <div
+    class="_meta_9c9fee"
+  >
+    <div
+      class="_meta-details_9c9fee"
+    >
+      <div
+        class="_heading_9c9fee"
+      >
+        <a
+          class="_title-url_9c9fee"
+          href="/book/test-book-title-test-book-1"
+        >
+          <h2
+            class="_title_9c9fee"
+          >
+            Test Book 1
+          </h2>
+        </a>
+        <div
+          class="_author-group_9c9fee"
+        >
+          <a
+            href="/author/john-doe-test-author-1"
+          >
+            <h3>
+              John Doe
+            </h3>
+          </a>
+          <a
+            href="/author/jane-doe-test-author-2"
+          >
+            <h3>
+              Jane Doe
+            </h3>
+          </a>
+        </div>
+      </div>
+      <p>
+        It is the description of the test book 1.
+      </p>
+    </div>
+    <div
+      class="_actions-container_9c9fee"
+    >
+      <p
+        class="_price_9c9fee"
+      >
+        16.39
+         USD
+      </p>
+      <button
+        class="chakra-button _btn_9c9fee css-76byr8"
+        type="button"
+      >
+        Add to Cart
+        <span
+          class="chakra-button__icon css-1hzyiq5"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-arrow-right "
+            data-icon="arrow-right"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
+              fill="currentColor"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</article>
+`;

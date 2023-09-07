@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom"
-import type { IBookPreviewProps } from "../../app/types/books.types"
+import type { IBookPreviewProps } from "../../app/types/props.types"
 import styles from "./book-preview.module.css"
 import { Button } from "@chakra-ui/react"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { IAuthor } from "@shared/books.types"
 
 export default function BookPreview({ book }: IBookPreviewProps) {
-  const { id, slug, cover, title, description, author, price } = book
+  const { id, slug, coverImg, title, description, authors, price } = book
   const handleAddToCart = () => {
     // TODO
     return null
@@ -15,8 +16,8 @@ export default function BookPreview({ book }: IBookPreviewProps) {
   return (
     <article className={styles.card}>
       <Link to={`/book/${slug}-${id}`} className={styles["image-container"]}>
-        {cover ? (
-          <img src={cover} alt={`Cover of the ${title}`} />
+        {coverImg ? (
+          <img src={coverImg} alt={`Cover of the ${title}`} />
         ) : (
           <figure
             aria-label="No image available"
@@ -34,11 +35,20 @@ export default function BookPreview({ book }: IBookPreviewProps) {
                 title.length > 25 ? "..." : ""
               }`}</h2>
             </Link>
-            <Link to={`/author/${author.slug}-${author.id}`}>
-              <h3 className={styles.author}>{`${author.name.substring(0, 25)}${
-                author.name.length > 25 ? "..." : ""
-              }`}</h3>
-            </Link>
+            <div className={styles["author-group"]}>
+              {authors.slice(0, 2).map((people: IAuthor) => {
+                const fullName =
+                  people.author.firstName + " " + people.author.lastName
+                return (
+                  <Link
+                    key={people.author.id}
+                    to={`/author/${people.author.slug}-${people.author.id}`}
+                  >
+                    <h3>{fullName}</h3>
+                  </Link>
+                )
+              })}
+            </div>
           </div>
           <p>{`${description.substring(0, 150)}${
             description.length > 80 ? "..." : ""

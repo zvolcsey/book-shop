@@ -1,4 +1,4 @@
-import type { IBookListProps } from "../../app/types/books.types"
+import type { IBookListProps } from "../../app/types/props.types"
 import BookPreview from "./book-preview"
 import styles from "./books-list.module.css"
 
